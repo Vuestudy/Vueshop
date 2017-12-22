@@ -1,5 +1,8 @@
 <template>
   <div>
+      <NavHead/>
+    <BredCrumb>商品列表</BredCrumb>
+
       <div class="accessory-result-page accessory-page">
         <div class="container">
             <div class="filter-nav">
@@ -46,23 +49,29 @@
             </div>
         </div>
     </div>
-    <Modal :mdShow="mdShowCart">
+    <modal :mdShow="mdShowCart">
        <p slot="message">
             加入购物车成功
        </p> 
        <div  slot="btnGroup">
-            <a class="btn btn--m" href="javascript:;"  @click="mdShowCart = false"> 关闭</a>
-       </div>
+             <a href="javascript:;" class="btn  btn--m" @click="mdShowCart = false">继续购物</a>
+            <router-link class="btn  btn--m" to="/cart">查看购物车列表</router-link>
+        </div>
+       
     </modal>
   </div>
 </template>
 <script>
+import NavHead from '@/components/NavHead'
+import BredCrumb from '@/components/BredCrumb'
   import axios from 'axios'
   import Modal from '@/components/Modal'
   var count = 0;
   export default {
     components:{
-        Modal
+        Modal,
+        NavHead,
+        BredCrumb
     },
     data(){
       return{

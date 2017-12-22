@@ -7,7 +7,6 @@ var user = require('../models/user');
 
 mongoose.connect('mongodb://localhost/shop');
 
-
 mongoose.connection.on('connected', function() {
     console.log("mongodb connected sucssess");
 })

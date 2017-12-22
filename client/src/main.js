@@ -3,23 +3,29 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueLazyload from 'vue-lazyload'  //引入这个懒加载插件
+import VueLazyload from 'vue-lazyload' //引入这个懒加载插件
 import infiniteScroll from 'vue-infinite-scroll'
+// import Axios from 'axios'
+// import VueAxios from 'vue-axios'
+
+// Vue.use(VueAxios, Axios)
+// Axios.defaults.baseURL = 'api'
+
 Vue.use(infiniteScroll)
 
 Vue.use(VueLazyload, {
-  preLoad: 1.3,
-  error: 'dist/error.png',
-  loading: '/static/img/ok-2.png',
-  attempt: 1
+    preLoad: 1.3,
+    error: 'dist/error.png',
+    loading: '/static/img/ok-2.png',
+    attempt: 1
 })
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })
